@@ -43,6 +43,12 @@ add_executable(client client.cpp)
 target_link_libraries(client PRIVATE proto_files)
 
 
+add_executable(tests tests/testServer.cpp)
+target_link_libraries(tests PRIVATE proto_files GTest::gtest GTest::gtest_main)
+enable_testing()
+add_test(NAME templateTest COMMAND tests)
+
+
 
  
 
