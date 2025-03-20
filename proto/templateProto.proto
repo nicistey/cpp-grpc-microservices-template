@@ -4,12 +4,20 @@ package templateProto;
 
 service Greeter {
     rpc SayHello (HelloRequest) returns (HelloReply);
+    rpc TimeWorkServer (Empty) returns (Seconds);
 }
 
-message HelloRequest{
+message Empty {
+}
+
+message Seconds {
+    int32 time = 1;
+}
+
+message HelloRequest {
     string name = 1;
 }
 
-message HelloReply{
-    string answer =1;
+message HelloReply {
+    string answer = 1;
 }
